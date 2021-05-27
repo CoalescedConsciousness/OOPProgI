@@ -27,7 +27,7 @@ namespace Bog
         {
             get
             {
-                foreach (Bog book in books) ////// HER TIL
+                return books;
             }
         }
 
@@ -64,7 +64,24 @@ namespace Bog
         }
 
         #endregion
+
+        public void GetBook()
+        {
+            Console.WriteLine("Titel:\t\t\tAuthor:\t\t\tISBN:");
+            Console.WriteLine($"{titel}\t\t{author}\t\t{Isbn}");
+        }
+
+        public static void GetBooks(List<Bog> arrBooks)
+        {
+            Console.WriteLine("Titel:\t\t\t\tAuthor:\t\t\tISBN:");
+            foreach (Bog book in arrBooks)
+            {
+                Console.WriteLine($"{book.titel}\t\t\t\t{book.author}\t\t{book.Isbn}");
+            }
+        }
     }
+
+
 
    
 }
