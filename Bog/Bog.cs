@@ -6,13 +6,15 @@ namespace Bog
 {
     public class Bog
     {
+        // Del 2: Omstruktureret til auto-properties.
         #region Fields
-        string titel;
-        string author;
-        readonly string Isbn; 
-        List<Bog> books = new List<Bog>();
+        public string titel { get; set;  }
+        public string author { get; set;  }
+        public string Isbn { get; } 
+        public List<Bog> books { get; set; } = new List<Bog>();
         #endregion
 
+        #region Del 1
         #region Constructor
         public Bog(string titel, string author, string Isbn)
         {
@@ -22,7 +24,7 @@ namespace Bog
         }
         #endregion
 
-        #region Properties
+        #region Properties 
         public List<Bog> Books
         {
             get
@@ -63,8 +65,9 @@ namespace Bog
             }
         }
 
-        #endregion
+        #endregion 
 
+        #region Methods for fetching data
         public void GetBook()
         {
             Console.WriteLine("Titel:\t\t\tAuthor:\t\t\tISBN:");
@@ -79,9 +82,13 @@ namespace Bog
                 Console.WriteLine($"{book.titel}\t\t\t\t{book.author}\t\t{book.Isbn}");
             }
         }
+        #endregion
+        #endregion
+
+
     }
 
 
 
-   
+
 }
