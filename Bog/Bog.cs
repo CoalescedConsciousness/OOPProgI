@@ -6,15 +6,15 @@ namespace Bog
 {
     public class Bog
     {
-        // Del 2: Omstruktureret til auto-properties.
+        // Lektion 1.2: Omstruktureret til auto-properties.
         #region Fields
-        public string titel { get; set;  }
-        public string author { get; set;  }
-        public string Isbn { get; } 
+        public string titel { get; set; }
+        public string author { get; set; }
+        public string Isbn { get; set; } 
         public List<Bog> books { get; set; } = new List<Bog>();
         #endregion
 
-        #region Del 1
+        #region Lektion 1.1
         #region Constructor
         public Bog(string titel, string author, string Isbn)
         {
@@ -24,8 +24,8 @@ namespace Bog
         }
         #endregion
 
-        #region Properties 
-        public List<Bog> Books
+        #region Properties // Kommenteret ud pga. Lektion 1.2
+       /* public List<Bog> Books
         {
             get
             {
@@ -63,7 +63,7 @@ namespace Bog
             {
                 return Isbn;
             }
-        }
+        }*/
 
         #endregion 
 
@@ -85,7 +85,15 @@ namespace Bog
         #endregion
         #endregion
 
+        #region Lektion 2.1
+        // Tilføjer en constructor uden argument, da man ellers ikke kan bruge object initializing.
+        public Bog() { }
 
+        public Bog(string titel)
+        {
+            this.titel = titel;
+        }
+        #endregion
     }
 
 
