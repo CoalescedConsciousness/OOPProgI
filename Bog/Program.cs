@@ -59,6 +59,8 @@ namespace Bog
                 Console.WriteLine("\n\n\n[a] Add new book");
                 Console.WriteLine("[u] Update storage for a book");
                 Console.WriteLine("[g] List all books");
+                Console.WriteLine("[s] Sell book");
+
                 Console.WriteLine("[q] Quit (the program, not your job. Dumb-dumb)");
 
                 switch (Console.ReadLine())
@@ -71,6 +73,11 @@ namespace Bog
                         break;
                     case "g":
                         Bog.GetBooks(books);
+                        break;
+                    case "s":
+                        Console.WriteLine("Which book do you wish to sell?");
+                        string soldBook = Console.ReadLine();
+                        Boghandler.Sælg(soldBook);
                         break;
                     case "q":
                         done = true;

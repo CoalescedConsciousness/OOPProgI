@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bog", "Bog\Bog.csproj", "{B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{2B76AC55-1311-4B71-8FFB-1EDE8F150875}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LilleTabel", "LilleTabel\LilleTabel.csproj", "{4D2B7D5A-3978-4BCA-A5EE-5F3AA89B4C00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2B76AC55-1311-4B71-8FFB-1EDE8F150875}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B76AC55-1311-4B71-8FFB-1EDE8F150875}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B76AC55-1311-4B71-8FFB-1EDE8F150875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D2B7D5A-3978-4BCA-A5EE-5F3AA89B4C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D2B7D5A-3978-4BCA-A5EE-5F3AA89B4C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D2B7D5A-3978-4BCA-A5EE-5F3AA89B4C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D2B7D5A-3978-4BCA-A5EE-5F3AA89B4C00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
