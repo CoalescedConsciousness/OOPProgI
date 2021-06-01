@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Regnemaskine", "Regnemaskine\Regnemaskine.csproj", "{21EEC2E9-9173-40B0-BDAB-FBA76CD8580C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anon", "Anon\Anon.csproj", "{8A1CCB52-6471-4ACF-B831-BCA3594D0360}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{21EEC2E9-9173-40B0-BDAB-FBA76CD8580C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21EEC2E9-9173-40B0-BDAB-FBA76CD8580C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21EEC2E9-9173-40B0-BDAB-FBA76CD8580C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A1CCB52-6471-4ACF-B831-BCA3594D0360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A1CCB52-6471-4ACF-B831-BCA3594D0360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A1CCB52-6471-4ACF-B831-BCA3594D0360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A1CCB52-6471-4ACF-B831-BCA3594D0360}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
