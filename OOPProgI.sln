@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LilleTabel", "LilleTabel\Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections", "Collections\Collections.csproj", "{2EE87315-8EC2-4413-88AA-6EC95A778A9E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NedarvPerson", "NedarvPerson\NedarvPerson.csproj", "{926FC29E-2784-469E-93DB-913C5209EF76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2EE87315-8EC2-4413-88AA-6EC95A778A9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EE87315-8EC2-4413-88AA-6EC95A778A9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EE87315-8EC2-4413-88AA-6EC95A778A9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{926FC29E-2784-469E-93DB-913C5209EF76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{926FC29E-2784-469E-93DB-913C5209EF76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{926FC29E-2784-469E-93DB-913C5209EF76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{926FC29E-2784-469E-93DB-913C5209EF76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
