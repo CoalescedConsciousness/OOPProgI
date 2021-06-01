@@ -77,7 +77,8 @@ namespace Bog
                     case "s":
                         Console.WriteLine("Which book do you wish to sell?");
                         string soldBook = Console.ReadLine();
-                        Boghandler.Sælg(soldBook);
+                        int soldInd = books.FindIndex(x => x.Titel == soldBook);
+                        Boghandler.Sælg(books[soldInd]);
                         break;
                     case "q":
                         done = true;
