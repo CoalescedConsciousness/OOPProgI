@@ -37,5 +37,15 @@ namespace Collections
                 Console.WriteLine($"[{colCar.IndexOf(x)+1}]: Registration: {x.carID}\t\tBrand: {x.carBrand}\t\tColor: {x.carColor}");
             }
         }
+
+        public void RemoveCar()
+        {
+            Console.WriteLine("Registration Number");
+            string getId = Console.ReadLine();
+            int indexNo = colCar.FindIndex(x => x.carID == getId);
+
+            colCar.RemoveAt(indexNo);
+            Console.WriteLine("Car Removed");
+        }
     }
 }

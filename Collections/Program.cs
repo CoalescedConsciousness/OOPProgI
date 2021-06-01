@@ -15,6 +15,8 @@ namespace Collections
             garage.AddCar();
             garage.GetCar();
             garage.GetAll();
+            garage.RemoveCar();
+            garage.GetAll();
 
 
         }
