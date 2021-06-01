@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntStructEnum", "IntStructE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{4B487C7B-5940-4895-9494-5F937D0D2FD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Regnemaskine", "Regnemaskine\Regnemaskine.csproj", "{21EEC2E9-9173-40B0-BDAB-FBA76CD8580C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{4B487C7B-5940-4895-9494-5F937D0D2FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B487C7B-5940-4895-9494-5F937D0D2FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B487C7B-5940-4895-9494-5F937D0D2FD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21EEC2E9-9173-40B0-BDAB-FBA76CD8580C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21EEC2E9-9173-40B0-BDAB-FBA76CD8580C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21EEC2E9-9173-40B0-BDAB-FBA76CD8580C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21EEC2E9-9173-40B0-BDAB-FBA76CD8580C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
