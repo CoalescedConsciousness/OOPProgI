@@ -6,7 +6,7 @@ namespace Bladkompagniet
 {
     class Magasin : Udgivelse
     {
-        public Magasin(string navn, string beskrivelse) : base(navn, beskrivelse)
+        public Magasin(string navn, string beskrivelse)
         {
             Navn = navn;
             Beskrivelse = beskrivelse;

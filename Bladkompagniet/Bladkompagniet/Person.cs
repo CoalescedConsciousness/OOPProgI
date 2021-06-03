@@ -18,5 +18,10 @@ namespace Bladkompagniet
             this.Navn = Navn;
             this.Post = Post;
         }
+
+        public Person()
+        {
+
+        }
     }
 }

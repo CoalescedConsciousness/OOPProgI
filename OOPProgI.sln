@@ -7,21 +7,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bog", "Bog\Bog.csproj", "{B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LilleTabel", "LilleTabel\LilleTabel.csproj", "{4D2B7D5A-3978-4BCA-A5EE-5F3AA89B4C00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections", "Collections\Collections.csproj", "{2EE87315-8EC2-4413-88AA-6EC95A778A9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collections", "Collections\Collections.csproj", "{2EE87315-8EC2-4413-88AA-6EC95A778A9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NedarvPerson", "NedarvPerson\NedarvPerson.csproj", "{926FC29E-2784-469E-93DB-913C5209EF76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NedarvPerson", "NedarvPerson\NedarvPerson.csproj", "{926FC29E-2784-469E-93DB-913C5209EF76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntStructEnum", "IntStructEnum\IntStructEnum.csproj", "{F4A272C4-0D91-42C4-A8D3-5E7107F33B2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntStructEnum", "IntStructEnum\IntStructEnum.csproj", "{F4A272C4-0D91-42C4-A8D3-5E7107F33B2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{4B487C7B-5940-4895-9494-5F937D0D2FD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptions", "Exceptions\Exceptions.csproj", "{4B487C7B-5940-4895-9494-5F937D0D2FD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Regnemaskine", "Regnemaskine\Regnemaskine.csproj", "{21EEC2E9-9173-40B0-BDAB-FBA76CD8580C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Regnemaskine", "Regnemaskine\Regnemaskine.csproj", "{21EEC2E9-9173-40B0-BDAB-FBA76CD8580C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anon", "Anon\Anon.csproj", "{8A1CCB52-6471-4ACF-B831-BCA3594D0360}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anon", "Anon\Anon.csproj", "{8A1CCB52-6471-4ACF-B831-BCA3594D0360}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Disco", "Disco\Disco.csproj", "{DCA0AE40-A830-45AD-B3E7-FC14B015AA81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Disco", "Disco\Disco.csproj", "{DCA0AE40-A830-45AD-B3E7-FC14B015AA81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoDShape", "TwoDShape\TwoDShape.csproj", "{E9603460-272C-42D0-A74B-AC0531B81810}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoDShape", "TwoDShape\TwoDShape.csproj", "{E9603460-272C-42D0-A74B-AC0531B81810}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bladkompagniet", "Bladkompagniet\Bladkompagniet\Bladkompagniet.csproj", "{180FF56C-AAB3-4AE3-A4F9-E977DDEEF412}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{E9603460-272C-42D0-A74B-AC0531B81810}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9603460-272C-42D0-A74B-AC0531B81810}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9603460-272C-42D0-A74B-AC0531B81810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{180FF56C-AAB3-4AE3-A4F9-E977DDEEF412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{180FF56C-AAB3-4AE3-A4F9-E977DDEEF412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{180FF56C-AAB3-4AE3-A4F9-E977DDEEF412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{180FF56C-AAB3-4AE3-A4F9-E977DDEEF412}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

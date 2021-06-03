@@ -6,7 +6,7 @@ namespace Bladkompagniet
 {
     class Ugeblad : Udgivelse
     {
-        public Ugeblad(string navn, string beskrivelse) : base (navn, beskrivelse)
+        public Ugeblad(string navn, string beskrivelse)
         {
             Navn = navn;
             Beskrivelse = beskrivelse;
