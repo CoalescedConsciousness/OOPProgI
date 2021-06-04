@@ -27,6 +27,10 @@ namespace RentACarVaskehal
             this.id = idCounter++;
         }
 
+        /// <summary>
+        /// Method for fetching the various fields of a Car object
+        /// </summary>
+        /// <returns></returns>
         public string HentBil()
         {
             return $"ID: [{id}], Registreringsnummer: {regNr}, Mærke: {mærke}, Farve: {farve}";
