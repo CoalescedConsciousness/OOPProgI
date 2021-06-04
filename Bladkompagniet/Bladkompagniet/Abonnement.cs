@@ -9,14 +9,14 @@ namespace Bladkompagniet
         public Udgivelse Udgivelse { get; }
         public int Periode { get; set; }
         public bool Gentag { get; set; }
-        public int Tilbud { get; set; }
+        public bool Tilbud { get; set; }
 
         public Abonnement(Udgivelse Udgivelse, int Periode, bool Gentag)
         {
             this.Udgivelse = Udgivelse;
             this.Periode = Periode;
             this.Gentag = Gentag;
-            this.Tilbud = 0;
+            this.Tilbud = false;
         }
 
         public Abonnement(Udgivelse Udgivelse)
@@ -24,7 +24,7 @@ namespace Bladkompagniet
             this.Udgivelse = Udgivelse;
             this.Periode = 1;
             this.Gentag = true;
-            this.Tilbud = 0;
+            this.Tilbud = false;
         }
 
         public static List<Abonnement> AboTestData(Udgivelse u)

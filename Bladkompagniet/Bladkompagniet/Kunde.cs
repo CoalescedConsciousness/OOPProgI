@@ -15,6 +15,11 @@ namespace Bladkompagniet
         }
         public Kunde() { }
 
+
+        /// <summary>
+        /// Metode til at udskrive en liste over kunder, inkl evt. abonnementer.
+        /// </summary>
+        /// <param name="listKunde"></param>
         public static void ListKunder(List<Kunde> listKunde)
         {
             foreach (Kunde k in listKunde)
@@ -34,7 +39,6 @@ namespace Bladkompagniet
         {
             Abonnementer.Add(a);
         }
-
 
         public static List<Kunde> KundeTestData()
         {

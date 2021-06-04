@@ -9,6 +9,7 @@ namespace Bladkompagniet
         public DateTime fra;
         public DateTime til;
         public double amount;
+        
 
         public static List<Tilbud> TilbudTestData()
         {
