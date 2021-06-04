@@ -91,7 +91,7 @@ namespace RentACarVaskehal
         }
 
         /// <summary>
-        /// Removes a specified 
+        /// Removes a specified Car based on its ID 
         /// </summary>
         /// <param name="id"></param>
         public void SletBilByID(int id)
@@ -99,6 +99,9 @@ namespace RentACarVaskehal
             cars.RemoveAt(FindIndex(id));
         }
 
+        /// <summary>
+        /// Removes a specified Car based on it's ID, given as input by the user.
+        /// </summary>
         public void SletBil()
         {
             Console.Write("Please specify the ID of the car you wish to remove from the list: ");
@@ -110,17 +113,27 @@ namespace RentACarVaskehal
              */
         }
 
+        /// <summary>
+        /// Adds a Car object, based on the ID - passed as an argument - to the Queue of cars to be washed
+        /// </summary>
+        /// <param name="id"></param>
         public void SendBilTilVaskByID(int id)
         {
             qCars.Enqueue(cars[FindIndex(id)]);
         }
 
+        /// <summary>
+        /// Adds a Car object, based on the ID based on input given by the user, to the Queue of cars to be washed
+        /// </summary>
         public void SendBilTilVask()
         {
             Console.Write("Please specify which car needs washing: ");
             SendBilTilVaskByID(int.Parse(Console.ReadLine()));
         }
 
+        /// <summary>
+        /// Lists all Car objects currently in the Queue to be washed.
+        /// </summary>
         public void VaskehalQueue()
         {
             Console.WriteLine($"There are currently {qCars.Count} cars in the queue.");
@@ -131,6 +144,9 @@ namespace RentACarVaskehal
 
         }
 
+        /// <summary>
+        /// "Washes" the Car object at the start of the Queue ([0]) by setting the objects boolean "washed" field to true, and removing it from the queue.
+        /// </summary>
         public void CarWashed()
         {
             qCars.Peek().washed = true;
@@ -141,12 +157,18 @@ namespace RentACarVaskehal
         /// Note that there is an initializer method in the RentACar class, that points to the actualizing method in the Rent class
         /// Due to the fact that the assignment required us to establish the List in the RentACar class.
         /// </summary>
+        /// <see cref="Rent.Udlaan(Car)"/>
         public void Udlaan() 
         {
             Console.WriteLine("Please specify the ID of the car you wish to rent:");
             Rent.Udlaan(cars[FindIndex(int.Parse(Console.ReadLine()))]);
         }
 
+        /// <summary>
+        /// Method located in RentACar which passes user input and List to a method located in the Rent class.
+        /// The car is marked as Returned (laant == default, leveret != default), and sent to the Queue to be washed.
+        /// </summary>
+        /// <see cref="Rent.Aflever(Car)"/>
         public void Aflever()
         {
             Console.WriteLine("Please specify the ID of the car you wish to return:");
@@ -156,7 +178,10 @@ namespace RentACarVaskehal
 
         }
 
-
+        /// <summary>
+        /// Forwards the Car Object list stored in RentACar to the Rent class. Prints out an overview of rented out cars (laant != default).
+        /// </summary>
+        /// <see cref="Rent.Overview(List{Car})"/>
         public void Overview()
         {
             Rent.Overview(cars);
