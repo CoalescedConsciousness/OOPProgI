@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace RentACarVaskehal
 {
-    class Car
+    public class Car
     {
         public string regNr, mærke, farve;
         public int id;
-
+        public DateTime laant, leveret;
         static int idCounter = 0;
+        public bool washed = true;
 
         public int ID { get; set; }
+        public DateTime Laant { get; set; }
+        public DateTime Leveret { get; set; }
 
         // Constructor
         public Car(string regNr, string mærke, string farve)

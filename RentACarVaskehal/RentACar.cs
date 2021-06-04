@@ -18,6 +18,9 @@ namespace RentACarVaskehal
             cars.Add(new Car("34567", "Ford", "Blå"));
         }
 
+        /// <summary>
+        /// Prints all cars in the list
+        /// </summary>
         public void UdskrivBil()
         {
             foreach (Car c in cars)
@@ -26,11 +29,22 @@ namespace RentACarVaskehal
             }
         }
 
-        public void UdskrivBil(int carId)
+        /// <summary>
+        /// Prints a specific car based on input request inside the method.
+        /// </summary>
+        /// <seealso cref="FindIndex(int)"/>
+        /// <seealso cref="Car.HentBil"/>
+        public void UdskrivBilByID()
         {
-            Console.WriteLine(cars[FindIndex(carId)].HentBil());
+            Console.Write("Please specify the ID of the car you wish to see: ");
+            Console.WriteLine(cars[FindIndex(int.Parse(Console.ReadLine()))].HentBil());
         }
 
+        /// <summary>
+        /// Locates a specific Car object in the RentACar list of Car objects, i.e. translates the human-"readable" Car ID to a computer-redable index number
+        /// </summary>
+        /// <param name="carId"></param>
+        /// <returns></returns>
         private int FindIndex(int carId)
         {
             int counter = 0;
@@ -48,10 +62,20 @@ namespace RentACarVaskehal
             return counter;
         }
 
+        /// <summary>
+        /// Creates a new Car object based on the arguments, and automatically adds it to the unified List
+        /// </summary>
+        /// <param name="regNr"></param>
+        /// <param name="mærke"></param>
+        /// <param name="farve"></param>
         public void OpretNyBil(string regNr, string mærke, string farve)
         {
             cars.Add(new Car(regNr, mærke, farve));
         }
+
+        /// <summary>
+        /// Creates a new Car object based on user input, and automatically adds it to the unified List
+        /// </summary>
         public void OpretNyBil()
         {
             Console.Write("Please provide the registration number of the car: ");
@@ -66,7 +90,11 @@ namespace RentACarVaskehal
             OpretNyBil(regNr, mærke, farve);
         }
 
-        public void SletBil(int id)
+        /// <summary>
+        /// Removes a specified 
+        /// </summary>
+        /// <param name="id"></param>
+        public void SletBilByID(int id)
         {
             cars.RemoveAt(FindIndex(id));
         }
@@ -82,7 +110,7 @@ namespace RentACarVaskehal
              */
         }
 
-        public void SendBilTilVask(int id)
+        public void SendBilTilVaskByID(int id)
         {
             qCars.Enqueue(cars[FindIndex(id)]);
         }
@@ -90,7 +118,7 @@ namespace RentACarVaskehal
         public void SendBilTilVask()
         {
             Console.Write("Please specify which car needs washing: ");
-            SendBilTilVask(int.Parse(Console.ReadLine()));
+            SendBilTilVaskByID(int.Parse(Console.ReadLine()));
         }
 
         public void VaskehalQueue()
@@ -105,7 +133,33 @@ namespace RentACarVaskehal
 
         public void CarWashed()
         {
+            qCars.Peek().washed = true;
             qCars.Dequeue();
+        }
+
+        /// <summary>
+        /// Note that there is an initializer method in the RentACar class, that points to the actualizing method in the Rent class
+        /// Due to the fact that the assignment required us to establish the List in the RentACar class.
+        /// </summary>
+        public void Udlaan() 
+        {
+            Console.WriteLine("Please specify the ID of the car you wish to rent:");
+            Rent.Udlaan(cars[FindIndex(int.Parse(Console.ReadLine()))]);
+        }
+
+        public void Aflever()
+        {
+            Console.WriteLine("Please specify the ID of the car you wish to return:");
+            int userInput = int.Parse(Console.ReadLine()); // Note that here the input is passed to a variable, in order to also pass the Car to be washed.
+            Rent.Aflever(cars[FindIndex(userInput)]);
+            SendBilTilVaskByID(userInput);
+
+        }
+
+
+        public void Overview()
+        {
+            Rent.Overview(cars);
         }
 
     }
