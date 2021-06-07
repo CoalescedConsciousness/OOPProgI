@@ -91,6 +91,11 @@ namespace RentACarExt
             }
         }
 
+        /// <summary>
+        /// Prints out all Car and Customer objects in their respective lists, indiscriminately.
+        /// </summary>
+        /// <param name="cars"></param>
+        /// <param name="cust"></param>
         public static void AllOverview(List<Car> cars, List<Customer> cust)
         {
             foreach (Car c in cars)
@@ -99,6 +104,10 @@ namespace RentACarExt
                 Console.WriteLine(cu.ToString());
         }
 
+        /// <summary>
+        /// Method for extend the period of a lease.
+        /// </summary>
+        /// <param name="cars"></param>
         public static void Extend(List<Car> cars)
         {
             try
@@ -106,13 +115,13 @@ namespace RentACarExt
                 Console.WriteLine("Which car would you like to extend the rent of?");
                 List<Car> tempCars = cars.FindAll(c => c.laant != default);
                 foreach (Car c in tempCars)
-                    Console.WriteLine(c.ToString() + ", Udlånt d. " + c.laant);
+                    Console.WriteLine(c.ToString() + ", Udlånt d. " + c.laant + ", Deadline d. " + c.deadline);
 
                 int userInput = int.Parse(Console.ReadLine());
                 Car selection = cars.Find(c => c.id == userInput);
                 Console.WriteLine(selection.ToString());
                 Console.WriteLine("And by how many days do you wish to extend the lease?");
-                selection.laant = selection.laant.AddDays(int.Parse(Console.ReadLine()));
+                selection.deadline = selection.deadline.AddDays(int.Parse(Console.ReadLine()));
             }
             catch (NullReferenceException)
             {
@@ -126,6 +135,7 @@ namespace RentACarExt
             {
                 Console.WriteLine("That's too long man!");
             }
+            catch (Exception) { } // Just in case any unforeseen exceptions occur.
         }
     } 
 }

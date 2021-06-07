@@ -260,7 +260,7 @@ namespace RentACarExt
 
         #endregion
 
-        #region Shared (Rent (Car, Customer)) functionality
+        #region Shared (Rent (Car, Customer)) functionality:
         /// <summary>
         /// Note that there is an initializer method in the RentACar class, that points to the actualizing method in the Rent class
         /// Due to the fact that the assignment required us to establish the List in the RentACar class.
