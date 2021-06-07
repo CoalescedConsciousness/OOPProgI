@@ -9,8 +9,8 @@ namespace RentACarExt
     public class RentACar : Rent
     {
         List<Car> cars = new List<Car>();
-        List<Customer> cust = new List<Customer>();
-        Queue<Car> qCars = new Queue<Car>();
+        List<Customer> cust = new List<Customer>();             // List that stores all Customer objects
+        Queue<Car> qCars = new Queue<Car>();                    // Queue (FIFO) for use in Car-wash routines.
 
         public RentACar()
         {

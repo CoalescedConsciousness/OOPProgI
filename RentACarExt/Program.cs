@@ -10,7 +10,7 @@ namespace RentACarExt
     {
         static void Main(string[] args)
         {
-            // TestRun1(); 
+            // TestRun1();              // Commented out to save time during further development, used in initial testing.
             CarMenu();
         }
 
@@ -28,13 +28,13 @@ namespace RentACarExt
                 Console.WriteLine(@"
                                 ////////////////////////////////////////////////////
                                 //    Welcome to Rent-a-Car, we'll take you far   //
-                                //            (...sorry)                          //
-                                //                                                //
-                                //                                                //
-                                // You have the following options:                //
-                                // ---- Overview(s): ----                         //
-                                // [l]: List available cars                       //
-                                // [o]: List of rented out cars                   //
+      ____     ___   ____       //            (...sorry)                          //      ___       ___    ____      ____    ___  ___
+    ________  __ __  __  __     //                                                //      ___       ___   __  __   ___  ___  ___  ___
+    ___  ___ ___ ___ __  __     //                                                //      ___   _   ___  ___  ___  ____  __  ________
+    ___      _______ ____       // You have the following options:                //      ___  ___  ___  ________    ____    ________
+    ___  ___ ___ ___ __  __     // ---- Overview(s): ----                         //      ___ _____ ___  ___  ___  __  ____  ___  ___
+    ________ ___ ___ __  __     // [l]: List available cars                       //      ______ ______  ___  ___  ___  ___  ___  ___
+      ____   ___ ___ __  __     // [o]: List of rented out cars                   //      ____     ____  ___  ___   ______   ___  ___
                                 // [s]: List a specific car by ID                 //
                                 // [m]: List all cars and customers               //
                                 //                                                //
@@ -133,6 +133,7 @@ namespace RentACarExt
                         qMenu = true;
                         break;
                     case "½":
+                        Console.Clear();
                         LoadTestData();
                         Cont();
                         break;
