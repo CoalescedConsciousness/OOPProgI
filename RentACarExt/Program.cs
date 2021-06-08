@@ -8,6 +8,9 @@ namespace RentACarExt
 { 
     class Program
     {
+        public static RentACar myRentACar = new RentACar(); // Made the object static so every class can access it directly. 
+                                                            // Note that this creates quite a lot of room for refactoring (pending).
+
         static void Main(string[] args)
         {
             // TestRun1();              // Commented out to save time during further development, used in initial testing.
@@ -21,7 +24,7 @@ namespace RentACarExt
         static void CarMenu()
         {
             bool qMenu = false;
-            RentACar myRentACar = new RentACar();
+            
             do
             {
                 Console.Clear();
@@ -63,6 +66,12 @@ namespace RentACarExt
                 // Switch case to allow user navigation
                 switch (Console.ReadLine())
                 {
+                    case "1":
+                        Console.Clear();
+                        foreach (Brands brand in myRentACar.brands)
+                            Console.WriteLine(brand.bName);
+                        Cont();
+                        break;
                     case "l":
                         Console.Clear();
                         myRentACar.UdskrivBil();
@@ -97,8 +106,13 @@ namespace RentACarExt
                         Cont();
                         break;
                     case "b":
+                        Console.Clear();
+                        myRentACar.UpdCust();
+                        Cont();
                         break;
                     case "n":
+                        Console.Clear();
+                        myRentACar.RmCust();
                         break;
                     case "w":
                         Console.Clear();

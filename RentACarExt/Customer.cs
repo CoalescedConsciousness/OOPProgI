@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RentACarExt
 {
-    public class Customer : Person
+    public class Customer : Person, ICRUD
     {
         public double debt;
         public Car rent;
@@ -28,7 +28,7 @@ namespace RentACarExt
         /// Method for fetching the various fields of a Customer object
         /// </summary>
         /// <returns></returns>
-        public string[] HentBil()
+        public string[] GetCustomer()
         {
             string[] result = new string[] { id.ToString(), name, age.ToString(), height.ToString(), debt.ToString() };
             return result;
@@ -43,6 +43,41 @@ namespace RentACarExt
             return $"ID: [{id}], Navn: {name}, Alder: {age}, Højde: {height}, Skylder: {debt:C2}";
         }
 
+        /// <summary>
+        /// Interface supplied *C*RUD method, primarily for backend use, as there is already a frontend method for this.
+        /// </summary>
+        /// <see cref="RentACar.AddCust"/>
+        public void Create() // To get this to work, we had to make the cust List public and static.
+                             // The crucial flaw here is that all data is stored within RentACar, thus making it that much harder to access
+        {
+            Console.WriteLine("Full name:");
+            string fName = Console.ReadLine();
+            Console.WriteLine("Age:");
+            int pAge = int.Parse(Console.ReadLine());
+            Console.WriteLine("Height:");
+            int pHeight = int.Parse(Console.ReadLine());
+
+            RentACar.cust.Add(new Customer(fName, pAge, pHeight));
+        }
+
+        /// <summary>
+        /// Interface supplied CR*U*D method, primarily for backend use, as there is already a frontend method for this.
+        /// </summary>
+        /// <see cref="RentACar.UpdCust"/>
+        public void Update()
+        {
+            Program.myRentACar.UpdCust();
+        }
+
+        /// <summary>
+        /// Interface supplied CRU*D* method, primarily for backend use, as there is already a frontend method for this.
+        /// </summary>
+        /// <see cref="RentACar.RmCust"/>
+        public void Delete()
+        {
+            Console.WriteLine("Please supply the ID of the customer you wish to delete");
+            RentACar.RmCust(int.Parse(Console.ReadLine()));
+        }
 
     }
 }

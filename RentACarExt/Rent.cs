@@ -6,6 +6,18 @@ namespace RentACarExt
 {
     public class Rent
     {
+        static Dictionary<Car, Customer> rentDic = new Dictionary<Car, Customer>(); // Dictionary to keep track of who rented what
+ 
+
+        static void PrintDic()
+        {
+            Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("List of current Rentals:"); Console.ForegroundColor = ConsoleColor.White;
+            foreach (KeyValuePair<Car, Customer> x in rentDic)
+            {
+                Console.WriteLine($"Car: {x.Key.regNr}, Brand: {x.Key.mærke} <<=>> Customer: {x.Value.id}, Name: {x.Value.name}");
+            }
+        }
+
         /// <summary>
         /// Method to mark a Car object as rented out *C*RUD
         /// </summary>
@@ -19,6 +31,8 @@ namespace RentACarExt
                 cu.rent = c;
                 cu.debt = 1000;
                 c.leveret = default;
+                rentDic.Add(c, cu); // add as key/value-pair
+                PrintDic();
             }
             else if (c.washed == false)
             {
@@ -44,7 +58,7 @@ namespace RentACarExt
                 c.leveret = DateTime.Now;
                 c.washed = false;
             }
-            if (c.deadline > DateTime.Now)
+            if (c.deadline < DateTime.Now)
             {
                 c.leveret = DateTime.Now;
                 c.washed = false;
@@ -52,6 +66,8 @@ namespace RentACarExt
                 debt *= 250;
                 cu.debt += debt;
                 Console.WriteLine($"Late return. You owe {debt:C2}");
+                rentDic.Remove(c);
+                PrintDic();
             }
         }
 
@@ -77,7 +93,7 @@ namespace RentACarExt
         /// Method for getting a list of all rented out Car objects. C*R*UD
         /// </summary>
         /// <param name="cars"></param>
-        public static void Overview(List<Car> cars, List<Customer> cust)
+        public static void RentedOverview(List<Car> cars, List<Customer> cust)
         {
             List<Car> tempCar = new List<Car>();
             Console.WriteLine("These cars are currently rented out:");
@@ -136,6 +152,8 @@ namespace RentACarExt
                 Console.WriteLine("That's too long man!");
             }
             catch (Exception) { } // Just in case any unforeseen exceptions occur.
+
         }
+
     } 
 }

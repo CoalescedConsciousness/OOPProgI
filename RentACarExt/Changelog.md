@@ -6,6 +6,14 @@
 ----
 
 ### Changelog:
+Version 1.3.1:
+
+- Removed Struct example (Everyone) and inst
+Version 1.3.0:
+
+- Added example of an Interface (iCRUD) and Struct(ure) (Everyone).
+
+  - Intention was to later make it possible to add every individual (customer, employee, etc.) to this complete list of individuals.
 
 Version 1.2.0:
 

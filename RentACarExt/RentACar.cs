@@ -6,17 +6,27 @@ using System.Threading.Tasks;
 
 namespace RentACarExt
 {
+
     public class RentACar : Rent
     {
         List<Car> cars = new List<Car>();
-        List<Customer> cust = new List<Customer>();             // List that stores all Customer objects
+        public static List<Customer> cust = new List<Customer>();             // List that stores all Customer objects
         Queue<Car> qCars = new Queue<Car>();                    // Queue (FIFO) for use in Car-wash routines.
+        public List<Brands> brands;
+
 
         public RentACar()
         {
-            cars.Add(new Car("12345", "Skoda", "Grøn"));
-            cars.Add(new Car("23456", "Toyota", "Rød"));
-            cars.Add(new Car("34567", "Ford", "Blå"));
+            brands = new List<Brands>()
+            {
+                new Brands("Skoda"),
+                new Brands("Toyota"),
+                new Brands("Ford"),
+            };
+
+            cars.Add(new Car("12345", brands[0].bName, "Grøn"));
+            cars.Add(new Car("23456", brands[1].bName, "Rød"));
+            cars.Add(new Car("34567", brands[2].bName, "Blå"));
             cust.Add(new Customer("Karsten Askefis", 34, 182));
             cust.Add(new Customer("Aben Per", 5, 68));
         }
@@ -55,9 +65,16 @@ namespace RentACarExt
         /// CRU*D*: Deletes a Customer object from the cust List.
         /// </summary>
         /// <param name="id"></param>
-        public void RmCust(int id)
+        public void RmCust()
         {
-            cust.RemoveAt(FindCustomerIndex(id));
+            Console.WriteLine("Please specify the ID of the customer you wish to remove from the list:");
+            int id = int.Parse(Console.ReadLine());
+            cust.RemoveAt(id);
+        }
+
+        public static void RmCust(int i)
+        {
+            cust.RemoveAt(i);
         }
     
         /// <summary>
@@ -67,7 +84,7 @@ namespace RentACarExt
         {
             Console.WriteLine("Specify the Customer ID you wish to customize:");
             int custID = int.Parse(Console.ReadLine());
-            Customer target = cust[FindCustomerIndex(custID)];
+            Customer target = cust[custID];
             Console.WriteLine("Which property do you wish to modify?: name, age, height, or debt?");
 
             switch (Console.ReadLine())
@@ -96,6 +113,7 @@ namespace RentACarExt
             Console.WriteLine("Done..");
 
         }
+
         #endregion
 
 
@@ -308,10 +326,10 @@ namespace RentACarExt
         /// <summary>
         /// Forwards the Car Object list stored in RentACar to the Rent class. Prints out an overview of rented out cars (laant != default).
         /// </summary>
-        /// <see cref="Rent.Overview(List{Car}, List{Customer})"/>
+        /// <see cref="Rent.RentedOverview(List{Car}, List{Customer})"/>
         public void Overview()
         {
-            Rent.Overview(cars, cust);
+            Rent.RentedOverview(cars, cust);
         }
 
         public void Extend()
@@ -330,5 +348,7 @@ namespace RentACarExt
             Rent.AllOverview(cars, cust);
         }
         #endregion
+
+
     }
 }
