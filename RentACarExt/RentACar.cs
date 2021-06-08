@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace RentACarExt
 {
-
+    public delegate void RentListMethod(List<Car> cars, List<Customer> cust);     // Example of delegates to allow for using various methods that uses the same parameter types.
+    public delegate void RentObjMethod(Car c, Customer cu);                       // See Overview() and AllOverview() as well as Udlaan() and Aflever() for useage.
     public class RentACar : Rent
     {
         List<Car> cars = new List<Car>();
@@ -14,6 +15,8 @@ namespace RentACarExt
         Queue<Car> qCars = new Queue<Car>();                    // Queue (FIFO) for use in Car-wash routines.
         public List<Brands> brands;
 
+        RentListMethod lDel;
+        RentObjMethod oDel;
 
         public RentACar()
         {
@@ -286,13 +289,15 @@ namespace RentACarExt
         /// <see cref="Rent.Udlaan(Car, Customer)"/>
         public void Udlaan() 
         {
+            oDel = Rent.Udlaan;
+
             try
             {
                 Console.WriteLine("Please specify the ID of the car you wish to rent:");
                 int car = int.Parse(Console.ReadLine());
                 Console.WriteLine("And the ID of the customer who wishes to rent the car:");
                 int cu = int.Parse(Console.ReadLine());
-                Rent.Udlaan(cars[FindIndex(car)], cust[FindCustomerIndex(cu)]);
+                oDel(cars[FindIndex(car)], cust[FindCustomerIndex(cu)]);
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -307,13 +312,15 @@ namespace RentACarExt
         /// <see cref="Rent.Aflever(Car, Customer)"/>
         public void Aflever()
         {
+            oDel = Rent.Aflever;
+
             try
             {
                 Console.WriteLine("Please specify the ID of the car you wish to return:");
                 int userCar = int.Parse(Console.ReadLine()); // Note that here the input is passed to a variable, in order to also pass the Car to be washed.
                 Console.WriteLine("Please specify the Customer ID:");
                 int userCust = int.Parse(Console.ReadLine());
-                Rent.Aflever(cars[FindIndex(userCar)], cust[FindCustomerIndex(userCust)]);
+                oDel(cars[FindIndex(userCar)], cust[FindCustomerIndex(userCust)]);
                 SendBilTilVaskByID(userCar);
             }
             catch (ArgumentOutOfRangeException)
@@ -329,7 +336,8 @@ namespace RentACarExt
         /// <see cref="Rent.RentedOverview(List{Car}, List{Customer})"/>
         public void Overview()
         {
-            Rent.RentedOverview(cars, cust);
+            lDel = Rent.RentedOverview;
+            lDel(cars, cust);
         }
 
         public void Extend()
@@ -345,10 +353,9 @@ namespace RentACarExt
         }
         public void AllOverview()
         {
-            Rent.AllOverview(cars, cust);
+            lDel = Rent.AllOverview;
+            lDel(cars, cust);
         }
         #endregion
-
-
     }
 }

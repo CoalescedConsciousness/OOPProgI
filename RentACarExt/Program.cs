@@ -47,6 +47,7 @@ namespace RentACarExt
                                 // [v]: Add a new customer to the list            //
                                 // [b]: Update info of and existing customer      //
                                 // [n]: Delete a customer from the list           //
+                                // [g]: Add a new car brand to the list           //
                                 //                                                //
                                 // ---- Car Wash: ----                            //
                                 // [w]: Send a car to be washed                   //
@@ -66,12 +67,6 @@ namespace RentACarExt
                 // Switch case to allow user navigation
                 switch (Console.ReadLine())
                 {
-                    case "1":
-                        Console.Clear();
-                        foreach (Brands brand in myRentACar.brands)
-                            Console.WriteLine(brand.bName);
-                        Cont();
-                        break;
                     case "l":
                         Console.Clear();
                         myRentACar.UdskrivBil();
@@ -113,6 +108,12 @@ namespace RentACarExt
                     case "n":
                         Console.Clear();
                         myRentACar.RmCust();
+                        break;
+                    case "g":
+                        Console.Clear();
+                        foreach (Brands brand in myRentACar.brands)
+                            Console.WriteLine(brand.bName);
+                        Cont();
                         break;
                     case "w":
                         Console.Clear();
