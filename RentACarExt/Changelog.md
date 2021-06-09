@@ -6,6 +6,26 @@
 ----
 
 ### Changelog:
+Version 1.3.5
+- Optimization:
+  - [l:299] Refactored use of delegates so not-null validation is checked when the delegate is called
+    - [l:307] Retained one catch entry as example of error it would otherwise produce.
+
+
+---
+##### History:
+Version 1.3.4:
+
+- Fixes:
+  - Initialization of Brands no longer throws an exception.
+
+- Changes:
+  - Added example of Delegate
+
+- Optimization:
+  - Minor refactoring of code
+
+
 Version 1.3.1:
 
 - Replaced Struct example "Everyone" with "Brands"

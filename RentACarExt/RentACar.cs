@@ -288,28 +288,25 @@ namespace RentACarExt
         /// <see cref="Rent.Udlaan(Car, Customer)"/>
         public void Udlaan() 
         {
-            
+            oDel = Rent.Udlaan;
 
             try
             {
-                oDel = Rent.Udlaan;
                 Console.WriteLine("Please specify the ID of the car you wish to rent:");
                 int car = int.Parse(Console.ReadLine());
                 Console.WriteLine("And the ID of the customer who wishes to rent the car:");
                 int cu = int.Parse(Console.ReadLine());
-                oDel(cars[FindIndex(car)], cust[FindCustomerIndex(cu)]);
+                oDel?.Invoke(cars[FindIndex(car)], cust[FindCustomerIndex(cu)]);                        // ?. checks to see if the referencevalue is null (unassigned), if not, it runs (Invoke) with the arguments.
             }
             catch (ArgumentOutOfRangeException)
             {
                 Console.WriteLine("No such Car or Customer");
             }
-            catch (TypeInitializationException e)
+            // If the Delegate isn't set (i.e. there is no method to call on the arguments passed)
+            // Note this is superfluous, as the delegate contents are checked before running (delegateVar?.Invoke()), thus this catch is omitted elsewhere.
+            catch (NullReferenceException e)
             {
-                Console.WriteLine($"Delegate method is empty... {e.Message}");
-            }
-            catch (NullReferenceException)
-            {
-                Console.WriteLine("Delegate Method problems, captain!");
+                Console.WriteLine($"Delegate Method problems, captain!: {e.Message}.. Yarr!");
             }
         }
 
@@ -328,7 +325,7 @@ namespace RentACarExt
                 int userCar = int.Parse(Console.ReadLine()); // Note that here the input is passed to a variable, in order to also pass the Car to be washed.
                 Console.WriteLine("Please specify the Customer ID:");
                 int userCust = int.Parse(Console.ReadLine());
-                oDel(cars[FindIndex(userCar)], cust[FindCustomerIndex(userCust)]);
+                oDel?.Invoke(cars[FindIndex(userCar)], cust[FindCustomerIndex(userCust)]);
                 SendBilTilVaskByID(userCar);
             }
             catch (ArgumentOutOfRangeException)
@@ -345,7 +342,7 @@ namespace RentACarExt
         public void Overview()
         {
             lDel = Rent.RentedOverview;
-            lDel(cars, cust);
+            lDel?.Invoke(cars, cust);
         }
 
         public void Extend()
@@ -363,7 +360,7 @@ namespace RentACarExt
         public void AllOverview()
         {
             lDel = Rent.AllOverview;
-            lDel(cars, cust);
+            lDel?.Invoke(cars, cust);
         }
         #endregion
     }
