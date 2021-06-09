@@ -67,7 +67,6 @@ namespace RentACarExt
         /// <summary>
         /// CRU*D*: Deletes a Customer object from the cust List.
         /// </summary>
-        /// <param name="id"></param>
         public void RmCust()
         {
             Console.WriteLine("Please specify the ID of the customer you wish to remove from the list:");
@@ -289,10 +288,11 @@ namespace RentACarExt
         /// <see cref="Rent.Udlaan(Car, Customer)"/>
         public void Udlaan() 
         {
-            oDel = Rent.Udlaan;
+            
 
             try
             {
+                oDel = Rent.Udlaan;
                 Console.WriteLine("Please specify the ID of the car you wish to rent:");
                 int car = int.Parse(Console.ReadLine());
                 Console.WriteLine("And the ID of the customer who wishes to rent the car:");
@@ -302,6 +302,14 @@ namespace RentACarExt
             catch (ArgumentOutOfRangeException)
             {
                 Console.WriteLine("No such Car or Customer");
+            }
+            catch (TypeInitializationException e)
+            {
+                Console.WriteLine($"Delegate method is empty... {e.Message}");
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("Delegate Method problems, captain!");
             }
         }
 
@@ -351,6 +359,7 @@ namespace RentACarExt
             cars[1].laant.AddMonths(-2);
             cars[1].deadline.AddMonths(-1);
         }
+
         public void AllOverview()
         {
             lDel = Rent.AllOverview;

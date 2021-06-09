@@ -4,6 +4,7 @@ using System.Text;
 
 namespace RentACarExt
 {
+
     public class Rent
     {
         static Dictionary<Car, Customer> rentDic = new Dictionary<Car, Customer>(); // Dictionary to keep track of who rented what

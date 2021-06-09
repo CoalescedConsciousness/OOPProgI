@@ -13,8 +13,7 @@ namespace RentACarExt
 
         public Brands(string name)
         {
-            this.bName = name;
-            Program.myRentACar.brands.Add(this);
+            bName = name;
         }
 
         // Note that these CRUD methods are primarily there for backend use, as we do not wish the end-user to be able to add new brands willy-nilly.
